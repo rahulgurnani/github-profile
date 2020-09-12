@@ -1,0 +1,23 @@
+# load all repository the current user has contributed to
+query { 
+  viewer { 
+    contributionsCollection {
+      commitContributionsByRepository {
+        contributions(first:10) {
+          edges {
+            node {
+              resourcePath
+            }
+          }
+        }
+      }
+      repositoryContributions(first: 10) {
+        nodes {
+          repository {
+            name
+          }
+        }
+      }
+    }
+  }
+}
